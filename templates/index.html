@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+<div class="hero" id="hero">
+    <div class="left_container" id="left_container">
+        <div class="tagline_container-large">
+            <div class="tagline-large" id="tagline">
+                <p>Freestyle</p>
+                <p>Inspiration</p>
+                <p>In time with</p>
+                <p>Your Beats</p>
+            </div>
+        </div>
+        <button class="start_button" id="start_button">click here for instructions</button>
+        <div class="instructions" id="instructions" style="display:none">
+            <button>Search or calculate your beat's BPM</button>
+            <button>Enter your BPM and word frequency</button>
+            <button>Click GENERATE to start your freestyle!</button>
+        </div>
+    </div>
+    <div class="right_container" id="right_container">
+        <div class="input_container">
+            <div class="bpm_container">
+                <input id="bpm" name="bpm" required="required" autocomplete="off" type="text">
+                <span>Beats per minute</span>
+                <div class="type_text" style="display:inline">Enter bpm:</div>
+            </div>
+            <div class="beatSelect_container">
+                <label for="beatSelect">Generate word every </label>
+                <select id="beatSelect" name="beatSelect">
+                    <option value="0.5">0.5</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                    <option value="8">8</option>
+                    <option value="16">16</option>
+                </select>
+                <p style="display:inline">bars</p>
+            </div>
+            <div class="calculator_container">
+                <p style="display:inline">Unsure? Try our </p> <a href="/bpmcalculator" class="calculator_link">BPM calculator</a>
+            </div>
+        </div>
+        <div class="generate_button_container">
+            <button id="generate_button" class="generate_button" type="submit" disabled>generate words</button>
+        </div>
+        <div class="bpm_popup" id="bpm_popup">
+            <p>Please enter an integer BPM between 1-299 beats per minute</p>
+            <button type="button" id="popup_close">close</button>
+        </div>
+    </div>
+</div>
+
+<div class="word_box" id="word_box" style="display:none">
+    <div id="word_container" class="word_container">Words appear here</div>
+    <div class="pause-reset_container" id="pause-reset_container">
+        <button class="pause_button" id="pause_button">Pause</button>
+        <button class="reset_button" id="reset_button">Reset</button>
+    </div>
+</div>
+
+{% endblock %}

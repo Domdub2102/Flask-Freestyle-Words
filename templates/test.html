@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Test
+{% endblock %}
+
+{% block main %}
+<div class="hero" id="hero">
+    <div class="left_container">
+        <button class="start_button" style="display:none">start</button>
+        <ul class="instructions" style="display:block">
+            <li>Search or <button class="calculate_button" type="button" style="display:inline">Calculate</button> the BPM of your beat</li>
+            <li>Enter your BPM and select how frequently you want new words</li>
+            <li>Click GENERATE to start your freestyle!</li>
+        </ul>
+        <div class="input_container">
+            <div class="bpm_container">
+                <input id="bpm" name="bpm" required="required" type="text">
+                <span>Beats per minute</span>
+                <div class="type_text" style="display:inline">Enter bpm:</div>
+            </div>
+            <div class="beatSelect_container">
+                <label for="beatSelect">Generate word every </label>
+                <select id="beatSelect" name="beatSelect">
+                    <option value="0.5">0.5</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                    <option value="8">8</option>
+                    <option value="16">16</option>
+                </select>
+                <p style="display:inline">bars</p>
+            </div>
+            <div class="calculator_container">
+                <p style="display:inline">Unsure? Try our </p><a href="/bpmcalculator" class="calculator_link">BPM calculator</a>
+            </div>
+        </div>
+    </div>
+    <div class="right_container">
+        <div class="tagline_container">
+            <div class="tagline">
+                <p>Freestyle</p>
+                <p>Inspiration</p>
+                <p>In time with</p>
+                <p>Your Beats</p>
+            </div>
+        </div>
+        <div class="generate_button_container">
+            <button id="generate_button" class="generate_button" type="submit">generate words</button>
+        </div>
+    </div>
+</div>
+
+<div class="word_box" id="word_box" style="display:none">
+    <div id="word_container" class="word_container">Words appear here</div>
+    <div class="pause-reset_container" id="pause-reset_container">
+        <button class="pause_button" id="pause_button">Pause</button>
+        <button class="reset_button" id="reset_button">Reset</button>
+    </div>
+</div>
+
+{% endblock %}
